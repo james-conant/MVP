@@ -25,7 +25,7 @@ export default function EnterWorkout() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     paddingTop: 200,
     justifyContent: "center"
   },

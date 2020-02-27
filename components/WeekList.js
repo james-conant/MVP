@@ -1,34 +1,47 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { Button } from "react-native-elements";
 
 export default function WeekList() {
-  const [weeks, setWeeks] = useState([
-    { week: "week 1", id: "1" },
-    { week: "week 2", id: "2" },
-    { week: "week 3", id: "3" },
-    { week: "week 4", id: "4" },
-    { week: "week 5", id: "5" },
-    { week: "week 6", id: "6" }
+  const [people, setPeople] = useState([
+    { name: "name 1", key: "1" },
+    { name: "name 2", key: "2" },
+    { name: "name 3", key: "3" },
+    { name: "name 4", key: "4" },
+    { name: "name 5", key: "5" },
+    { name: "name 6", key: "6" }
   ]);
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        //   numColumns={2}
-        keyExtractor={item => item.id}
-        data={weeks}
-        renderItem={({ item }) => <Text style={styles.item}>{item.week}</Text>}
-      />
-    </View>
+    // <View style={styles.container}>
+    //   <Text style={styles.header}>people</Text>
+    //   <View>
+    //     <FlatList
+    //       keyExtractor={item => item.id}
+    //       data={people}
+    //       renderItem={({ item }) => (
+    //         <Text style={styles.item}>{item.name}</Text>
+    //       )}
+    //     />
+    //   </View>
+    // </View>
+    <ScrollView>
+      <View style={styles.container}>
+        {people.map(item => (
+          <View>
+            <Text style={styles.item}>{item.name}</Text>
+          </View>
+        ))}
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: 1200,
     backgroundColor: "#fff",
-    paddingTop: 40,
+    paddingTop: 20,
     paddingHorizontal: 20
   },
 
@@ -37,6 +50,12 @@ const styles = StyleSheet.create({
     padding: 30,
     fontSize: 24,
     marginHorizontal: 10,
+    backgroundColor: "pink"
+  },
+  header: {
+    textAlign: "center",
+    fontSize: 22,
+    padding: 10,
     backgroundColor: "pink"
   }
 });
