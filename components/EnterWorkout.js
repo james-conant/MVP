@@ -6,7 +6,6 @@ export default function EnterWorkout() {
   const [workout, setWorkout] = useState("select");
   return (
     <View>
-      <Text>hello</Text>
       <Picker
         style={styles.container}
         selectedValue={workout}
