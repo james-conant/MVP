@@ -16,11 +16,6 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    // <View>
-    //   <Text style={styles.text}>Really Good Workout Log App</Text>
-    //   <EnterWorkout />
-    //   <WeekList />
-    // </View>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="EnterWorkout" component={EnterWorkout} />
