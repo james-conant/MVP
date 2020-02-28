@@ -16,13 +16,22 @@ export default function EnterWorkout({ navigation }) {
   return (
     <View>
       <Text style={styles.header}>Choose Your Workout Type</Text>
-      <Picker style={styles.container} selectedValue={workout} onValueChange>
+      <Picker style={styles.container}>
+        {/* <Picker style={styles.container} selectedValue={workout} onValueChange> */}
+
         <Picker.Item label="Body Building" value="body-building" />
-        <Picker.Item label="Create Your Own" value="create-your-own" />
+        <Picker.Item
+          label="Power Lifting (coming soon)"
+          value="power-lifting"
+        />
+        <Picker.Item
+          label="Create Your Own (coming soon)"
+          value="create-your-own"
+        />
       </Picker>
       <View style={styles.buttonContainer}>
         <Button
-          title="submit"
+          title="Submit"
           onPress={event => {
             navigation.navigate("WeekList");
             // handleUpdate(event);
@@ -38,18 +47,17 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,
     paddingTop: 100,
+    justifyContent: "space-between",
     justifyContent: "center"
   },
 
   buttonContainer: {
-    padding: 20
+    padding: 50
   },
   header: {
     textAlign: "center",
     fontSize: 24,
-    padding: 10,
-    backgroundColor: "green",
-    padding: 10,
+    backgroundColor: "grey",
     margin: 15
   }
 });

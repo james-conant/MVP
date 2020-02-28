@@ -36,7 +36,7 @@ export default function WeekList({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    height: 1200,
+    height: 900,
     backgroundColor: "#fff",
     paddingTop: 20,
     paddingHorizontal: 20
